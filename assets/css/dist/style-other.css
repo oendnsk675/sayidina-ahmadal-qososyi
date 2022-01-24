@@ -1,0 +1,460 @@
+:root {
+  --background-color: #0f1923;
+}
+
+
+.btn {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  color: #ece8e1;
+  cursor: pointer;
+  --button-text-color: var(--background-color);
+  --button-text-color-hover: var(--button-background-color);
+  --border-color: #7D8082;
+  --button-background-color: #ece8e1;
+  --highlight-color: #ff4655;
+  --button-inner-border-color: transparent;
+  --button-bits-color: var(--background-color);
+  --button-bits-color-hover: var(--button-background-color);
+  position: relative;
+  padding: 6px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.btn::before,
+.btn::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0; left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid var(--border-color);
+  transition: all .15s ease;
+}
+
+.btn::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.btn::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+
+.btn:active::before,
+.btn:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.btn:active::before {
+  top: 3px;
+}
+
+.btn:active::after {
+  bottom: 3px;
+}
+
+.btn__inner {
+  position: relative;
+  display: block;
+  padding: 9px 29px;
+  background-color: #ff4655;
+  overflow: hidden;
+}
+
+.btn__inner::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: var(--button-bits-color);
+}
+
+.btn__inner::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: var(--button-bits-color);
+  transition: all .2s ease;
+}
+
+.btn__slide {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #0f1923;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.btn__slide_submit {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ece8e1;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.btn__content {
+  position: relative;
+  font-size: 13px;
+}
+
+.btn:hover {
+  color: var(--button-text-color-hover);
+}
+
+
+.btn:hover .btn__content_submit {
+  color: #0f1923;
+  position: relative;
+  z-index: 10;
+}
+
+.btn:hover .btn__slide,.btn:hover .btn__slide_submit {
+  width: calc(100% + 15px);
+}
+
+
+.btn:hover .btn__inner::after {
+  background-color: var(--button-bits-color-hover);
+}
+
+.btn--light {
+  --button-background-color: var(--background-color);
+  --button-text-color: var(--highlight-color);
+  --button-inner-border-color: var(--highlight-color);
+  --button-text-color-hover: #ece8e1;
+  --button-bits-color-hover: #ece8e1;
+}
+
+.text-oslab {
+   -webkit-text-stroke: 1px black;
+   left: -110px;
+   top: 105px;
+}
+.text-oslab-dark {
+   -webkit-text-stroke: 1px #ECE8E1;
+   left: -110px;
+   top: 105px;
+}
+
+.text-oslab h1 {
+  font-size: 17rem;
+  line-height: 1;
+}
+
+.text-oslab-dark h1 {
+  font-size: 17rem;
+  line-height: 1;
+}
+
+.line {
+  left: -326px;
+  height: 0.05rem;
+  top: 385px;
+}
+
+.line-about {
+  height: 0.09rem;
+}
+
+.text-oslab-whatcanido {
+  -webkit-text-stroke: 1px black;
+  right: -110px;
+  top: 13px;
+}
+
+.text-oslab-whatcanido-dark {
+  -webkit-text-stroke: 1px #ECE8E1;
+  right: -110px;
+  top: 13px;
+}
+
+.text-oslab-whatcanido h1 {
+  font-size: 17rem;
+  line-height: 1;
+}
+
+.text-oslab-whatcanido-dark h1 {
+  font-size: 17rem;
+  line-height: 1;
+}
+
+.line-whatcanido {
+  right: -496px;
+  height: 0.05rem;
+  top: 338px;
+}
+
+.input-name:focus, .input-email:focus, .input-message:focus {
+  box-shadow: 0 0 0pt 1.5pt #ff4655;
+}
+
+/* navbar */
+nav .menu a:after {
+  display: block;
+  content: '';
+  border-bottom: 2px solid #ece8e1;
+  margin-top: 10px;
+  transform: scaleX(0);
+  transition: transform 250ms ease;
+}
+
+nav .menu a:hover:after{
+  transform: scaleX(1);
+}
+/* /navbar */
+
+
+/* scroll smoth */
+#scroll-smoth {
+  opacity: 0;
+  right: 2.5rem;
+  bottom: 800px;
+  transition: all 600ms ease-out;
+}
+
+#scroll-smoth.active-up {
+  opacity: 1;
+  right: 2.5rem;
+  bottom: 2.5rem;
+}
+/* /scroll smoth */
+
+/* animate character about */
+.character-about g#face {
+	-webkit-animation: shake-head 3s infinite ease-out;
+  animation: shake-head 3s infinite ;
+}
+
+@keyframes shake-head {
+  0% {
+    transform: translate(6px, -2px);
+  }
+  
+  50%{
+    transform: translate(10px, 2px);
+  }
+  
+  100% {
+    transform: translate(6px, -1px);
+  }
+}
+
+
+
+/* toggle */
+
+.switch {
+  display: inline-block;
+  height: 2rem;
+  position: relative;
+  width: 60px;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ECE8E1;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #E74252;
+  bottom: 4px;
+  content: "";
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  height: 25px;
+  width: 25px;
+}
+
+input:checked + .slider {
+  background-color: #7D8082;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* toggle */
+
+/* animate the box of what my skills */
+
+
+#boxs-frontend .inactive-box div, #boxs-backend .inactive-box div{
+  position: relative;
+  left: 1px;
+  bottom: 150px;
+  opacity: 0;
+  transform-origin: right;
+  /* transition: 350ms ease-out; */
+}
+
+#box-intersection .active-box div, #box-intersection .active-box div{
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+  transform-origin: right;
+  /* transition: 350ms ease-out; */
+}
+
+
+#box-intersection .active-box div:nth-child(1) , #box-intersection .active-box div:nth-child(1) {
+  animation: box-fe 3s both 1.2s;
+  /* animation-delay: 850ms; */
+}
+#box-intersection .active-box div:nth-child(2) , #box-intersection .active-box div:nth-child(2) {
+  animation: box-fe 3s both 850ms;
+  /* animation-delay: 650ms; */
+}
+#box-intersection .active-box div:nth-child(3) , #box-intersection .active-box div:nth-child(3) {
+  /* animation-delay: 450ms; */
+  animation: box-fe 3s both 650ms;
+}
+#box-intersection .active-box div:nth-child(4) , #box-intersection .active-box div:nth-child(4) {
+  /* animation-delay: 150ms; */
+  animation: box-fe 3s both 450ms;
+}
+#box-intersection .active-box div:nth-child(5) , #box-intersection .active-box div:nth-child(5) {
+  /* animation-delay: 10ms; */
+  animation: box-fe 3s both 250ms;
+}
+
+
+/* #boxs-frontend .active {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+} */
+
+@keyframes box-fe {
+  0% {
+    opacity: 0;
+    transform: rotate(20deg);
+    transform-origin: right;
+    left: 1px;
+    bottom: 150px;
+  }
+  100% {
+    position: relative;
+    transform: rotate(0deg);
+    transform-origin: right;
+    left: 0px;
+    bottom: 0px;
+    animation-play-state: paused;
+  }
+}
+
+/* /animate the box of what my skills */
+
+
+/* animate open element */
+.fade-in-inactive{
+  opacity: 0;
+}
+.fade-right-inactive{
+  opacity: 0;
+}
+.fade-left-inactive{
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fade-in 3s both;
+}
+
+.fade-right {
+  animation: fade-right 2s both;
+}
+
+.fade-left {
+  animation: fade-left 2s both;
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100%{
+    /* opacity: 1; */
+    animation-play-state: paused;
+  }
+}
+@keyframes fade-right {
+  0% {
+    position: relative;
+    left: -100px;
+    opacity: 0;
+  }
+  
+  100%{
+    position: relative;
+    left: 0px;
+    /* opacity: 1; */
+    animation-play-state: paused;
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    position: relative;
+    right: -100px;
+    opacity: 0;
+    animation-play-state: paused;
+  }
+  
+  100%{
+    position: relative;
+    right: 0px;
+    /* opacity: 1; */
+  }
+}
+/* /animate open element */
+
+.line-vertical {
+  height: 103%;
+  width: 1px;
+}
