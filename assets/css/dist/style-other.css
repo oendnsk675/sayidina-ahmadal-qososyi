@@ -235,14 +235,14 @@ nav .menu a:hover:after{
 
 
 /* scroll smoth */
-#scroll-smoth {
+.scroll-smoth {
   opacity: 0;
   right: 2.5rem;
   bottom: 800px;
   transition: all 600ms ease-out;
 }
 
-#scroll-smoth.active-up {
+.scroll-smoth.active-up {
   opacity: 1;
   right: 2.5rem;
   bottom: 2.5rem;
@@ -458,3 +458,60 @@ input:checked + .slider:before {
   height: 103%;
   width: 1px;
 }
+
+/* animate hamburger menu */
+
+.balok1, .balok2 {
+  width: 30px;
+}
+.balok3 {
+  width: 20px;
+  position: relative;
+  transform: translateX(10px);
+}
+
+.balok1, .balok2, .balok3 {
+  transition: 550ms ease;
+  height: 4px;
+  background-color: #ece8e1;
+  border-radius: 10px;
+}
+
+
+.hamburger-menu input {
+  position: relative;
+  width: 30px;
+  height: 28px;
+  z-index: 10;
+}
+
+.hamburger-menu input:checked ~ div:nth-child(2) span:nth-child(1) {
+  transform-origin: right;
+  transform: rotate(-45deg) translate(1px, -2px);
+}
+
+.hamburger-menu input:checked ~ div:nth-child(2) span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu input:checked ~ div:nth-child(2) span:nth-child(3) {
+  width: 30px;
+  transform: translateX(0px);
+  transform-origin: right;
+  transform: rotate(45deg) translate(2px, 3px);
+}
+
+.menu-nav {
+  position: relative;
+  transform: translateY(-300px);
+  transition: 650ms ease;
+  z-index: -10;
+}
+
+.menu-nav-show {
+  transform: translateY(0px);
+}
+
+
+
+/* /animate hamburger menu */

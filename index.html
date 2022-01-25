@@ -16,7 +16,7 @@
 <body class="w-full h-screen bg-primary relative transition-all duration-500 dark:bg-color3 font-Open-Sans">
 
     <!-- menu in the bottom right -->
-    <div id="scroll-smoth" class="fixed flex flex-col items-center gap-6 z-40">
+    <div class="fixed flex flex-col items-center gap-6 scroll-smoth z-40 md:bottom-2">
         <img onclick="toTop()" src="./assets/icons/arrow up.svg" class="hover:opacity-60 cursor-pointer" alt="">
         <div id="area-toggle-mode2" class="h-16 w-8 border border-primary bg-primary bg-opacity-40 relative cursor-pointer">
             <!-- btn-toggle -->
@@ -33,8 +33,9 @@
     </div>
     <!-- menu in the bottom right -->
 
-    <header>
-        <nav class="bg-color3 h-full px-14 py-4 pt-6 box-content flex justify-between items-start">
+    <header class="md:mb-11">
+        <!-- nav web -->
+        <nav class="bg-color3 h-full px-14 md:hidden py-4 pt-6 box-content flex justify-between items-start">
             <div>
                 <img src="./assets/icons/logo.svg" class="w-28" alt="logo oslab">
             </div>
@@ -74,45 +75,88 @@
                 </div>
             </div>
         </nav>
+        <!-- nav web -->
+
+        <!-- nav mobile -->
+        <nav class="lg:hidden fixed w-full top-0 box-content  z-50">
+                <div class="flex justify-between bg-color3 py-4 items-center px-4">
+                    <!-- nav left -->
+                    <div>
+                        <img src="./assets/icons/logo.svg" width="114px" alt="logo">
+                    </div>
+                    <!-- /nav left -->
+        
+                    <!-- nav right -->
+                    <!-- hamburger menu -->
+                    <div class="relative hamburger-menu">
+                        <input type="checkbox" class="opacity-0" onclick="toggleHamburger()">
+                        <div class="flex absolute z-0 flex-col left-0 top-2 gap-1 justify-center">
+                            <span class="balok1"></span>
+                            <span class="balok2"></span>
+                            <span class="balok3"></span>
+                        </div>
+                    </div>
+                    <!-- /hamburger menu -->
+                    <!-- /nav left -->
+                </div>
+    
+                <!-- menu nav -->
+                <div class="flex flex-col w-full menu-nav bg-color3">
+                    <a href="" class="py-4 hover:bg-color1 transition-all duration-500 border-t border-primary border-opacity-25">
+                        <div class="text-center text-primary text-base font-semibold">Home</div>
+                    </a>
+                    <a href="" class="py-4 hover:bg-color1 transition-all duration-500 border-t border-primary border-opacity-25">
+                        <div class="text-center text-primary text-base font-semibold">About</div>
+                    </a>
+                    <a href="" class="py-4 hover:bg-color1 transition-all duration-500 border-t border-primary border-opacity-25">
+                        <div class="text-center text-primary text-base font-semibold">Portofolio</div>
+                    </a>
+                    <a href="" class="py-4 hover:bg-color1 transition-all duration-500 border-t border-primary border-opacity-25">
+                        <div class="text-center text-primary text-base font-semibold">Contact</div>
+                    </a>
+                </div>
+                <!-- /menu nav -->
+        </nav>
+        <!-- /nav mobile -->
     </header>
 
     
     <main class="relative">
         <!-- line vertical -->
-        <span class="absolute h-full z-50 bg-color2 opacity-20 left-10 line-vertical"></span>
+        <span class="absolute h-full lg:z-50 md:z-30 bg-color2 opacity-20 left-10 line-vertical"></span>
         <!-- /line vertical -->
 
         
         <!-- hero -->
-        <div class="pt-24 px-24">
-            <div class="flex gap-8 justify-between relative">
+        <div class="pt-24 lg:px-24 md:h-screen md:mb-28">
+            <div class="flex gap-8 justify-between relative md:px-6 md:h-full md:overflow-hidden">
                 <!-- left-hero -->
                 <div data-lazy="fade-right" class="">
-                    <div class="text-6xl -tracking-wide font-bold text-secondary">
+                    <div class="text-6xl md:text-4xl -tracking-wide font-bold text-secondary">
                         <h1>Hi, i'm cozy</h1>
                         <h1>I'm fullstack developer</h1>
                     </div>
-                    <div class="mt-6 text-2xl -tracking-wide font-semibold transition-all duration-500 dark:text-primary text-color3">
-                        <h4>I can create intractive web applications</h4>
-                        <h4>and build with HTML, CSS, and Javascript</h4>
+                    <div class="mt-6 text-2xl md:text-base -tracking-wide font-semibold transition-all duration-500 dark:text-primary text-color3">
+                        <h4>I can create intractive web application</h4>
+                        <h4>with Html, Css, and Javascript</h4>
                     </div>
                     <div class="mt-14">
                         <div>
-                            <a href="mailto: sayidinaahmadalqososyi@gmail.com">
+                            <!-- <a href="mailto: sayidinaahmadalqososyi@gmail.com"> -->
                                 <button id="btn-email-me" class="btn btn--light">
                                     <span class="btn__inner">
                                     <span class="btn__slide btn-slide-change"></span>
                                     <span class="btn__content btn-content-change">Email me</span>
                                     </span>
                                 </button>
-                            </a>
+                            <!-- </a> -->
                         </div>
                     </div>
                 </div>
                 <!-- /left-hero -->
                 
                 <!-- right-hero -->
-                <div data-lazy="fade-left" class="relative w-1/4">
+                <div data-lazy="fade-left" class="relative w-1/4 md:hidden">
                     <!-- hero profile -->
                     <img src="./assets/icons/hero-profile-white.svg" class="absolute top-10 -left-10 transition-all duration-500 dark:opacity-0 " alt="">
                     <img src="./assets/icons/hero-profile-dark.svg" class="absolute top-10 -left-10 opacity-0  dark:opacity-100 transition-all duration-500" alt="">
@@ -137,7 +181,7 @@
                 <!-- butir-butir -->
     
             </div>
-            <p data-lazy="fade-in" class="text-center mt-24 mb-24 text-secondary opacity-70 font-medium">Scroll down to se more about me</p>
+            <p data-lazy="fade-in" class="text-center lg:mt-24 lg:mb-24 md:-mt-14 text-secondary opacity-70 font-medium">Scroll down to se more about me</p>
         </div>
         <!-- /hero -->
         
@@ -148,13 +192,13 @@
             <img src="./assets/icons/ss.png" class="absolute -top-14 -left-64" alt="">
             <!-- /ss trianggle -->
 
-            <div  class="bg-secondary relative pt-14 px-24 overflow-x-hidden">
+            <div class="bg-secondary relative pt-14 px-24 md:px-6 overflow-x-hidden">
 
 
-                <div class="flex justify-between relative">
+                <div class="flex justify-between relative z-40">
                     <!-- about-left -->
-                    <div data-lazy="fade-right" class="mt-14 relative w-5/12">
-                        <div class="text-5xl -tracking-wide relative font-bold text-primary">
+                    <div data-lazy="fade-right" class="mt-14 relative w-5/12 md:w-10/12">
+                        <div class="text-5xl md:text-4xl -tracking-wide relative font-bold text-primary">
                             <h1>About Me</h1>
                         </div>
                         <!-- line -->
@@ -179,7 +223,7 @@
                     <!-- /about-left -->
                     
                     <!-- about-right -->
-                    <div data-lazy="fade-left"  class="mt-32 relative z-20">
+                    <div data-lazy="fade-left"  class="mt-32 relative z-20 md:hidden">
                         <!-- character -->
                         
                         <svg class="character-about" xmlns="http://www.w3.org/2000/svg" width="400"  viewBox="0 0 596.842 371.551">
@@ -266,11 +310,11 @@
         
         
         <!-- what can i do -->
-        <div class="px-24 mt-16 overflow-hidden relative">
-            <div class="flex justify-between relative">
+        <div class="px-24 md:px-6 mt-16 overflow-hidden relative">
+            <div class="flex justify-between relative md:flex-col">
                 <!-- whatcanido-left -->
-                <div data-lazy="fade-right" class="mt-14 relative w-5/12">
-                    <div class="text-5xl -tracking-wide relative font-bold text-color3 transition-all duration-500 dark:text-primary">
+                <div data-lazy="fade-right" class="mt-14 relative w-5/12 md:w-10/12">
+                    <div class="text-5xl md:text-4xl -tracking-wide relative font-bold text-color3 transition-all duration-500 dark:text-primary">
                         <h1>What Can I Do</h1>
                     </div>
                     <!-- line -->
@@ -279,7 +323,7 @@
                     <div class="text-base mt-20 flex flex-col gap-5 -tracking-wide relative font-medium text-color3 transition-all duration-500 dark:text-primary">
                         <p>
                             i can create interactive web application 
-                            with vue js and beautiful using taliwindcss and html
+                            with vue js and beautiful using taliwindCSS and html
                         </p>
                         <p>
                             for the backend side i usually use laravel or express js
@@ -291,31 +335,31 @@
                 <!-- /whatcanido-left -->
 
                 <!-- box skills -->
-                <div id="box-intersection" class="flex gap-5 mt-32">
+                <div id="box-intersection" class="flex gap-5 mt-32 md:mt-20">
                     <!-- frontend -->
-                    <div class="">
-                        <div id="boxs-frontend" class="w-48 h-64 relative align-bottom border-4 pt-4 border-t-0 px-2 pb-2 rounded-xl border-color3 transition-all duration-500 dark:border-primary">
+                    <div class="w-11/23">
+                        <div id="boxs-frontend" class="w-48 md:w-full h-64 md:h-52  relative align-bottom border-4 pt-4 border-t-0 px-2 pb-2 rounded-xl border-color3 transition-all duration-500 dark:border-primary">
                             <div class="w-full h-full relative flex justify-end flex-col gap-2 inactive-box">
                                 <div class="h-12 bg-secondary px-6 justify-between flex items-center gap-4">
                                    <i class="fab fa-vuejs fa-lg text-primary"></i>
-                                   <span class="font-semibold text-primary text-sm">Vue Js</span>
+                                   <span class="font-semibold text-primary text-sm md:text-xs">Vue Js</span>
                                 </div>
                                 <div class="h-12 bg-secondary px-6 justify-between flex items-center gap-4">
                                     <!-- <img src="./assets/icons/js.svg" width="24px" alt=""> -->
                                     <i class="fab fa-js fa-lg text-primary"></i>
-                                    <span class="font-semibold text-primary text-sm">Javascript</span>
+                                    <span class="font-semibold text-primary text-sm md:text-xs">Javascript</span>
                                 </div>
-                                <div class="h-12 bg-secondary px-6 justify-between flex items-center gap-2">
+                                <div class="h-12 bg-secondary px-6 md:pl-6 md:pr-3 justify-between flex items-center gap-2 md:gap-4">
                                     <img src="./assets/icons/tailwindcss-ar21.svg" width="23px" alt="">
-                                    <span class="font-semibold text-primary text-sm">Tailwind CSS</span>
+                                    <span class="font-semibold text-primary text-sm md:text-xs">Tailwind CSS</span>
                                 </div>
                                 <div class="h-12 bg-secondary px-6 justify-between flex items-center gap-4">
                                     <i class="fab fa-css3-alt fa-lg text-primary" aria-hidden="true"></i>
-                                    <span class="font-semibold text-primary text-sm">Css</span>
+                                    <span class="font-semibold text-primary text-sm md:text-xs">Css</span>
                                 </div>
                                 <div class="h-12 bg-secondary rounded-b-xl px-6 justify-between flex items-center gap-4">
                                     <i class="fa fa-html5 fa-lg text-primary" aria-hidden="true"></i>
-                                    <span class="font-semibold text-primary text-sm">Html</span>
+                                    <span class="font-semibold text-primary text-sm md:text-xs">Html</span>
                                 </div>
                             </div>
                         </div>
@@ -324,29 +368,29 @@
                     <!-- /frontend -->
 
                     <!-- backend -->
-                    <div class="">
-                        <div id="boxs-backend" class="w-48 h-64  flex justify-end flex-col gap-2 align-bottom border-4 pt-4 border-t-0 px-2 pb-2 rounded-xl border-color3 transition-all duration-500 dark:border-primary">
+                    <div class="w-11/23">
+                        <div id="boxs-backend" class="w-48 md:w-full h-64 md:h-52 flex justify-end flex-col gap-2 align-bottom border-4 pt-4 border-t-0 px-2 pb-2 rounded-xl border-color3 transition-all duration-500 dark:border-primary">
                             <div class="w-full h-full relative flex justify-end flex-col gap-2 inactive-box">
                                 <div class="h-12 bg-secondary px-6 justify-between flex items-center gap-4">
                                    <i class="fas fa-database fa-lg text-primary"></i>
-                                   <span class="font-semibold text-primary text-sm">MySQL</span>
+                                   <span class="font-semibold text-primary text-sm md:text-xs">MySQL</span>
                                 </div>
                                 <div class="h-12 bg-secondary px-6 justify-between flex items-center gap-4">
                                     <!-- <img src="./assets/icons/js.svg" width="24px" alt=""> -->
                                     <i class="fas fa-database fa-lg text-primary"></i>
-                                    <span class="font-semibold text-primary text-sm">Mongodb</span>
+                                    <span class="font-semibold text-primary text-sm md:text-xs">Mongodb</span>
                                 </div>
                                 <div class="h-12 bg-secondary px-6 justify-between flex items-center gap-2">
                                     <i class="fab fa-node-js fa-lg text-primary" aria-hidden="true"></i>
-                                    <span class="font-semibold text-primary text-sm">Express js</span>
+                                    <span class="font-semibold text-primary text-sm md:text-xs">Express js</span>
                                 </div>
-                                <div class="h-12 bg-secondary px-6 justify-between flex items-center gap-4">
+                                <div class="h-12 bg-secondary px-6 md:pl-6 md:pr-5 justify-between flex items-center gap-4">
                                     <i class="fab fa-node fa-lg text-primary" aria-hidden="true"></i>
-                                    <span class="font-semibold text-primary text-sm">Node js</span>
+                                    <span class="font-semibold text-primary text-sm md:text-xs">Node js</span>
                                 </div>
                                 <div class="h-12 bg-secondary rounded-b-xl px-6 justify-between flex items-center gap-4">
                                     <i class="fab fa-laravel fa-lg text-primary" aria-hidden="true"></i>
-                                    <span class="font-semibold text-primary text-sm">Laravel</span>
+                                    <span class="font-semibold text-primary text-sm md:text-xs">Laravel</span>
                                 </div>
                             </div>
                         </div>
@@ -371,8 +415,8 @@
         <!-- /what can i do -->
 
         <!-- my portofolio -->
-        <div id="portofolio" class="mt-32 px-24 overflow-x-hidden">
-            <div data-lazy="fade-in" class="text-5xl mb-24 -tracking-wide relative text-center font-bold text-color3 transition-all duration-500 dark:text-primary">
+        <div id="portofolio" class="mt-32 px-24 md:px-6 overflow-x-hidden">
+            <div data-lazy="fade-in" class="text-5xl md:text-4xl mb-24 -tracking-wide relative text-center font-bold text-color3 transition-all duration-500 dark:text-primary">
                 <h1>My Portofolio</h1>
             </div>
             
@@ -383,16 +427,16 @@
                     <div class="text-3xl mb-7 -tracking-wide font-bold text-color3 transition-all duration-500 dark:text-primary">
                         <h1 data-lazy="fade-right">01.</h1>
                     </div>
-                    <div class="flex justify-between items-start">
+                    <div class="flex justify-between items-start md:flex-col-reverse md:gap-4">
                         <!-- desc portofolio -->
-                        <div data-lazy="fade-right" class="w-1/3">
-                            <h1 class="text-3xl mb-12 -tracking-wide  font-bold text-color3 transition-all duration-500 dark:text-primary">Web Smart tandon</h1>
+                        <div data-lazy="fade-right" class="w-1/3 md:w-full">
+                            <h1 class="text-3xl md:text-2xl md:text-center mb-12 md:mb-7 -tracking-wide  font-bold text-color3 transition-all duration-500 dark:text-primary">Web Smart tandon</h1>
                             <p class="transition-all duration-500 dark:text-primary">
                                 smarttandon web is a reservoir controller web,
                                 from the web we can turn on and turn off 
                                 the reservoir remotely, and analyze usage every month
                             </p>
-                            <div class="mt-6 flex items-center gap-4">
+                            <div class="mt-6 flex items-center gap-4 md:justify-center md:mt-8">
                                 <!-- <a href="#"> -->
                                     <button disabled id="btn-email-me" class="btn btn--light cursor-not-allowed opacity-40">
                                         <span class="btn__inner w-20 cursor-not-allowed" style="padding: 8px 0px;">
@@ -415,7 +459,7 @@
                         <!-- /desc portofolio -->
 
                         <!-- ss portofolio -->
-                        <div data-lazy="fade-left" class="w-7/12">
+                        <div data-lazy="fade-left" class="w-7/12 md:w-full">
                             <img src="./assets/image/smarttandon.png" alt="">
                         </div>
                         <!-- /ss portofolio -->
@@ -435,15 +479,15 @@
         <img src="./assets/icons/ss2.png" class="absolute -top-14 -left-64" alt="">
         <!-- /ss trianggle -->
 
-        <div class="mt-32 pb-14 px-24 overflow-x-hidden bg-color3">
+        <div class="mt-32 pb-14 px-24 md:px-6 overflow-x-hidden bg-color3">
             <!-- my-contact -->
                 <div class="pt-14">
-                    <div data-lazy="fade-right" class="text-5xl mb-7 -tracking-wide font-bold text-primary">
+                    <div data-lazy="fade-right" class="text-5xl md:text-4xl mb-7 md:mb-20 -tracking-wide font-bold text-primary">
                         <h1>Get In Touch</h1>
                     </div>
-                    <div class="flex items-start">
+                    <div class="flex items-start md:flex-col-reverse md:gap-16">
                         <!-- form contact -->
-                        <div data-lazy="fade-right" class="w-1/3">
+                        <div data-lazy="fade-right" class="w-1/3 md:w-full">
                             <form action="" method="post" class="flex flex-col gap-3 form-contact">
                                 <div>
                                     <input class="w-full h-9 pl-3 outline-none input-name" placeholder="Type your name" type="text" name="name" id="name">
@@ -470,32 +514,32 @@
                         <!-- /form contact -->
 
                         <!-- separator -->
-                        <div data-lazy="fade-in" class="h-80 mt-3 ml-56 w-0.5 opacity-60 bg-primary relative flex items-center">
-                            <span class="text-primary bg-color3 absolute -left-2 py-2">Or</span>
+                        <div data-lazy="fade-in" class="h-80 mt-3 ml-56 md:ml-0 md:h-0.5 md:w-full w-0.5 opacity-60 bg-primary relative flex items-center md:justify-center">
+                            <span class="text-primary bg-color3 absolute md:relative -left-2 md:left-0 py-2 md:px-2">Or</span>
                         </div>
                         <!-- /separator -->
 
                         <!-- list contact -->
-                        <div data-lazy="fade-left" class="ml-16 flex flex-col gap-8">
+                        <div data-lazy="fade-left" class="ml-16 md:ml-0 flex flex-col gap-8">
                             <a target="_blank" href="mailto: sayidinaahmadalqososyi@gmail.com" class="flex items-center gap-6">
-                                <img src="./assets/icons/iconmonstr-email-3.svg" alt="iconmonstr-email-3">
-                                <h2 class="text-primary text-xl font-semibold">Sayidinaahmadalqososyi@gmail.com</h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 md:w-7" viewBox="0 0 41.333 31"><path d="M20.667,19.728.026,3H41.307L20.667,19.728Zm0,4.433L0,7.412V34H41.333V7.412Z" transform="translate(0 -3)" fill="#ece8e1"/></svg>
+                                <h2 class="text-primary text-xl font-semibold md:text-sm">Sayidinaahmadalqososyi@gmail.com</h2>
                             </a>
                             <a target="_blank" href="https://www.linkedin.com/in/sayidina-ahamadal-qososyi-0576021a4/" class="flex items-center gap-6">
-                                <img src="./assets/icons/iconmonstr-linkedin-4.svg" alt="iconmonstr-linkedin-4">
-                                <h2 class="text-primary text-xl font-semibold">Sayidina ahmadal qososyi</h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 md:w-7" viewBox="0 0 36.333 36.333"><path d="M18.167,0A18.167,18.167,0,1,0,36.333,18.167,18.167,18.167,0,0,0,18.167,0ZM15.139,24.222H12.111V15.139h3.028ZM13.625,13.79a1.679,1.679,0,1,1,1.665-1.679A1.672,1.672,0,0,1,13.625,13.79ZM25.736,24.222H22.711V19.891c0-2.848-3.031-2.607-3.031,0v4.331H16.653V15.139h3.028v1.655c1.32-2.446,6.056-2.628,6.056,2.344Z" fill="#ece8e1"/></svg>
+                                <h2 class="text-primary text-xl font-semibold md:text-sm">Sayidina ahmadal qososyi</h2>
                             </a>
                             <a target="_blank" href="https://api.whatsapp.com/send?phone=6281917320977&text=hey+cozy,+I+have+business+to+discuss+with+you" class="flex items-center gap-6">
-                                <img src="./assets/icons/iconmonstr-whatsapp-4.svg" alt="iconmonstr-whatsapp-4">
-                                <h2 class="text-primary text-xl font-semibold">+6281917320977</h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 md:w-7" viewBox="0 0 36 36"><path d="M18.047,9.258a8.665,8.665,0,0,0-7.124,13.58l-.873,3.192,3.273-.86a8.659,8.659,0,0,0,13.37-7.255A8.646,8.646,0,0,0,18.047,9.258Zm5.088,12.366A2.676,2.676,0,0,1,21.38,22.86a3.557,3.557,0,0,1-1.638-.1,15.1,15.1,0,0,1-1.482-.547,11.6,11.6,0,0,1-4.442-3.926,5.055,5.055,0,0,1-1.062-2.689,2.914,2.914,0,0,1,.911-2.169.957.957,0,0,1,.693-.326l.5.009c.159.008.373-.06.585.447s.737,1.8.8,1.93a.48.48,0,0,1,.021.456,1.8,1.8,0,0,1-.259.433l-.39.456c-.13.129-.266.27-.114.531a7.835,7.835,0,0,0,1.446,1.8,7.057,7.057,0,0,0,2.091,1.29c.26.129.411.108.564-.064s.649-.759.823-1.02.347-.218.585-.131,1.517.715,1.776.846.434.195.5.3a2.134,2.134,0,0,1-.15,1.236ZM18,0A18,18,0,1,0,36,18,18,18,0,0,0,18,0Zm.044,28.32a10.417,10.417,0,0,1-4.977-1.266L7.551,28.5l1.476-5.392a10.405,10.405,0,1,1,9.017,5.213Z" fill="#ece8e1"/></svg>
+                                <h2 class="text-primary text-xl font-semibold md:text-sm">+6281917320977</h2>
                             </a>
                             <a href="https://www.facebook.com/sayidinaahmadal.qososyi" class="flex items-center gap-6">
-                                <img src="./assets/icons/icons8-facebook.svg" alt="icons8-facebook">
-                                <h2 class="text-primary text-xl font-semibold">Sayidinaahmadal.qososyi</h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 md:w-7" viewBox="0 0 36 36"><g transform="translate(-4 -4)"><path d="M-1064-4693h-.033l.005,0v0a19.979,19.979,0,0,0,2.665-.2V-4707.7h5.176l.813-5.257h-5.989v-2.875a5.892,5.892,0,0,1,.613-2.879,2.327,2.327,0,0,1,2.144-1.242h3.283v-4.588l-.025,0a27.854,27.854,0,0,0-4.077-.245c-5.067,0-7.636,2.8-7.636,8.334v3.5h-4.949v5.258h4.948v14.438c.324.055.652.1.975.139v0c-.31-.034-.629-.076-.975-.127v-.014a18.013,18.013,0,0,1-10.651-6.079,17.936,17.936,0,0,1-3.147-5.34A17.931,17.931,0,0,1-1082-4711a17.882,17.882,0,0,1,5.272-12.728A17.882,17.882,0,0,1-1064-4729a17.88,17.88,0,0,1,12.728,5.272A17.882,17.882,0,0,1-1046-4711a17.881,17.881,0,0,1-5.272,12.728A17.88,17.88,0,0,1-1064-4693Z" transform="translate(1086 4733)" fill="#ece8e1"/></g></svg>
+                                <h2 class="text-primary text-xl font-semibold md:text-sm">Sayidinaahmadal.qososyi</h2>
                             </a>
                             <a target="_blank" href="https://github.com/oendnsk675" class="flex items-center gap-6">
-                                <img src="./assets/icons/icons8-githubbw.svg" alt="icons8-githubbw">
-                                <h2 class="text-primary text-xl font-semibold">Oendnsk675</h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 md:w-7" viewBox="0 0 36 36"><path d="M14.358,38a1.606,1.606,0,0,0,.946-1.474V32.19a4.241,4.241,0,0,1,.032-.49l-.032.008H12.487a2.8,2.8,0,0,1-2.661-1.445c-.548-1.044-.783-2.81-2.191-3.774-.235-.161-.078-.4.391-.4a4.291,4.291,0,0,1,2.113,1.606A3.293,3.293,0,0,0,12.8,29.3c1.946,0,2.99-.1,3.617-.446a3.727,3.727,0,0,1,2.8-1.963v-.02c-4.436-.146-7.27-1.659-8.589-3.995a46.066,46.066,0,0,0-6.791.568q-.068-.394-.118-.792a46.762,46.762,0,0,1,6.531-.573,6.67,6.67,0,0,1-.228-.682,49.3,49.3,0,0,0-6.407.078c-.016-.267-.037-.532-.04-.8a49.981,49.981,0,0,1,6.275-.089,8.094,8.094,0,0,1-.1-1.239,7.031,7.031,0,0,1,1.33-4.015c-.391-1.365-.939-4.256.157-5.3a6.432,6.432,0,0,1,4.3,1.686A11.343,11.343,0,0,1,20,10.832a10.7,10.7,0,0,1,4.383.883,6.432,6.432,0,0,1,4.3-1.686c1.174,1.124.548,4.015.157,5.3A6.269,6.269,0,0,1,30.1,19.343a8.212,8.212,0,0,1-.086,1.131,50.393,50.393,0,0,1,6.421.082c0,.271-.026.535-.04.8a49.425,49.425,0,0,0-6.542-.071,6.764,6.764,0,0,1-.254.787,47.441,47.441,0,0,1,6.69.553q-.05.4-.118.792a46.515,46.515,0,0,0-6.949-.548c-1.3,2.311-4.085,3.818-8.434,3.994v.025c2.035,0,3.913,3.131,3.913,5.3v4.336A1.606,1.606,0,0,0,25.642,38,18.458,18.458,0,0,0,38,20.467,18.259,18.259,0,0,0,20,2,18.259,18.259,0,0,0,2,20.467,18.458,18.458,0,0,0,14.358,38Z" transform="translate(-2 -2)" fill="#ece8e1"/></svg>
+                                <h2 class="text-primary text-xl font-semibold md:text-sm">Oendnsk675</h2>
                             </a>
                         </div>
                         <!-- /ss portofolio -->

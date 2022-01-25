@@ -6,7 +6,7 @@ module.exports = {
       fontFamily: {
         'Open-Sans' : ["Open Sans"]
       },
-      heigh: {
+      height: {
         'h-19' : '2.5rem'
       },
       colors: {
@@ -16,7 +16,9 @@ module.exports = {
         'color2' : '#3C423D',
         'color3' : '#0F1923',
       },
-
+      spacing: {
+        '11/23': '47%'
+      },
       screens: {
         'xsm': {'max': '383px'},
         'smx': {'max': '530px'},

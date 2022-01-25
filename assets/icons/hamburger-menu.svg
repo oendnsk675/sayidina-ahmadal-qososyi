@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21">
+  <g id="hamburger-menu" transform="translate(-474 -148)">
+    <rect id="balok1" width="30" height="5" rx="2.5" transform="translate(474 148)" fill="#ece8e1"/>
+    <rect id="balok2" width="30" height="5" rx="2.5" transform="translate(474 156)" fill="#ece8e1"/>
+    <rect id="balok3" width="19" height="5" rx="2.5" transform="translate(485 164)" fill="#ece8e1"/>
+  </g>
+</svg>

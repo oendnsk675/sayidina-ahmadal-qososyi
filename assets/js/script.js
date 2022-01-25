@@ -87,7 +87,7 @@ areaToggleMode2.addEventListener('click', () => {
 function toggleMode(){
     let cek = btnToggleMode.classList.contains('translate-x-7')
     const html = document.querySelector('html')
-    console.log(cek);
+    // console.log(cek);
     if (!cek) {
         // lakukan dark mode
         // btnToggleMode.classList.remove('left-0');
@@ -159,7 +159,7 @@ function toggleMode(){
 
 window.addEventListener('scroll', function(){
     let value = window.scrollY
-    let scroll = document.getElementById('scroll-smoth')
+    let scroll = document.querySelector('.scroll-smoth')
     scroll.classList.toggle('active-up', value > 500)
 
     let text_oslab_hero = document.querySelector('#text-oslab-hero') 
@@ -200,7 +200,7 @@ const lazy_container4 = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         let attribute = entry.target.getAttribute('data-lazy')
         
-        console.log(entry);
+        // console.log(entry);
         if (entry.isIntersecting) {
             
             if (attribute == 'fade-in') {
@@ -251,8 +251,23 @@ form.addEventListener('submit', e => {
         body : body.value
     } 
     // console.log(subject, text);
-    console.log(data_email);
+    // console.log(data_email);
     let params = toParams(data_email)
     window.open(`mailto:sayidinaahmadalqososyi@gmail.com?`+params);
 })
 // /mailto on submit bottom right
+
+// menu nav toggle
+let hamburgerMenu = document.querySelector('.hamburger-menu input')
+let menuNav = document.querySelector('.menu-nav')
+
+function toggleHamburger(){
+    if (hamburgerMenu.checked) {
+        // alert()
+        menuNav.classList.add('menu-nav-show')
+    }else{
+        menuNav.classList.remove('menu-nav-show')
+    }
+}
+
+// /menu nav toggle
