@@ -2,6 +2,10 @@
   --background-color: #0f1923;
 }
 
+.swiper {
+  width: 600px;
+  height: 300px;
+}
 
 .btn {
   -moz-appearance: none;
@@ -14,7 +18,7 @@
   cursor: pointer;
   --button-text-color: var(--background-color);
   --button-text-color-hover: var(--button-background-color);
-  --border-color: #7D8082;
+  --border-color: #7d8082;
   --button-background-color: #ece8e1;
   --highlight-color: #ff4655;
   --button-inner-border-color: transparent;
@@ -26,18 +30,19 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
 }
 
 .btn::before,
 .btn::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
-  right: 0; left: 0;
+  right: 0;
+  left: 0;
   height: calc(50% - 5px);
   border: 1px solid var(--border-color);
-  transition: all .15s ease;
+  transition: all 0.15s ease;
 }
 
 .btn::before {
@@ -78,24 +83,26 @@
 }
 
 .btn__inner::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 2px;
   height: 2px;
   background-color: var(--button-bits-color);
 }
 
 .btn__inner::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
-  right: 0; bottom: 0;
+  right: 0;
+  bottom: 0;
   width: 4px;
   height: 4px;
   background-color: var(--button-bits-color);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .btn__slide {
@@ -107,7 +114,7 @@
   width: 0;
   background-color: #0f1923;
   transform: skew(-15deg);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .btn__slide_submit {
@@ -119,7 +126,7 @@
   width: 0;
   background-color: #ece8e1;
   transform: skew(-15deg);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .btn__content {
@@ -131,17 +138,16 @@
   color: var(--button-text-color-hover);
 }
 
-
 .btn:hover .btn__content_submit {
   color: #0f1923;
   position: relative;
   z-index: 10;
 }
 
-.btn:hover .btn__slide,.btn:hover .btn__slide_submit {
+.btn:hover .btn__slide,
+.btn:hover .btn__slide_submit {
   width: calc(100% + 15px);
 }
-
 
 .btn:hover .btn__inner::after {
   background-color: var(--button-bits-color-hover);
@@ -156,14 +162,14 @@
 }
 
 .text-oslab {
-   -webkit-text-stroke: 1px black;
-   left: -110px;
-   top: 105px;
+  -webkit-text-stroke: 1px black;
+  left: -110px;
+  top: 105px;
 }
 .text-oslab-dark {
-   -webkit-text-stroke: 1px #ECE8E1;
-   left: -110px;
-   top: 105px;
+  -webkit-text-stroke: 1px #ece8e1;
+  left: -110px;
+  top: 105px;
 }
 
 .text-oslab h1 {
@@ -193,7 +199,7 @@
 }
 
 .text-oslab-whatcanido-dark {
-  -webkit-text-stroke: 1px #ECE8E1;
+  -webkit-text-stroke: 1px #ece8e1;
   right: -110px;
   top: 13px;
 }
@@ -214,25 +220,26 @@
   top: 338px;
 }
 
-.input-name:focus, .input-email:focus, .input-message:focus {
+.input-name:focus,
+.input-email:focus,
+.input-message:focus {
   box-shadow: 0 0 0pt 1.5pt #ff4655;
 }
 
 /* navbar */
 nav .menu a:after {
   display: block;
-  content: '';
+  content: "";
   border-bottom: 2px solid #ece8e1;
   margin-top: 10px;
   transform: scaleX(0);
   transition: transform 250ms ease;
 }
 
-nav .menu a:hover:after{
+nav .menu a:hover:after {
   transform: scaleX(1);
 }
 /* /navbar */
-
 
 /* scroll smoth */
 .scroll-smoth {
@@ -251,25 +258,23 @@ nav .menu a:hover:after{
 
 /* animate character about */
 .character-about g#face {
-	-webkit-animation: shake-head 3s infinite ease-out;
-  animation: shake-head 3s infinite ;
+  -webkit-animation: shake-head 3s infinite ease-out;
+  animation: shake-head 3s infinite;
 }
 
 @keyframes shake-head {
   0% {
     transform: translate(6px, -2px);
   }
-  
-  50%{
+
+  50% {
     transform: translate(10px, 2px);
   }
-  
+
   100% {
     transform: translate(6px, -1px);
   }
 }
-
-
 
 /* toggle */
 
@@ -281,11 +286,11 @@ nav .menu a:hover:after{
 }
 
 .switch input {
-  display:none;
+  display: none;
 }
 
 .slider {
-  background-color: #ECE8E1;
+  background-color: #ece8e1;
   display: flex;
   align-items: center;
   bottom: 0;
@@ -294,22 +299,22 @@ nav .menu a:hover:after{
   position: absolute;
   right: 0;
   top: 0;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .slider:before {
-  background-color: #E74252;
+  background-color: #e74252;
   bottom: 4px;
   content: "";
   left: 4px;
   position: absolute;
-  transition: .4s;
+  transition: 0.4s;
   height: 25px;
   width: 25px;
 }
 
 input:checked + .slider {
-  background-color: #7D8082;
+  background-color: #7d8082;
 }
 
 input:checked + .slider:before {
@@ -320,8 +325,8 @@ input:checked + .slider:before {
 
 /* animate the box of what my skills */
 
-
-#boxs-frontend .inactive-box div, #boxs-backend .inactive-box div{
+#boxs-frontend .inactive-box div,
+#boxs-backend .inactive-box div {
   position: relative;
   left: 1px;
   bottom: 150px;
@@ -330,7 +335,8 @@ input:checked + .slider:before {
   /* transition: 350ms ease-out; */
 }
 
-#box-intersection .active-box div, #box-intersection .active-box div{
+#box-intersection .active-box div,
+#box-intersection .active-box div {
   position: relative;
   left: 0px;
   bottom: 0px;
@@ -338,28 +344,31 @@ input:checked + .slider:before {
   /* transition: 350ms ease-out; */
 }
 
-
-#box-intersection .active-box div:nth-child(1) , #box-intersection .active-box div:nth-child(1) {
+#box-intersection .active-box div:nth-child(1),
+#box-intersection .active-box div:nth-child(1) {
   animation: box-fe 3s both 1.2s;
   /* animation-delay: 850ms; */
 }
-#box-intersection .active-box div:nth-child(2) , #box-intersection .active-box div:nth-child(2) {
+#box-intersection .active-box div:nth-child(2),
+#box-intersection .active-box div:nth-child(2) {
   animation: box-fe 3s both 850ms;
   /* animation-delay: 650ms; */
 }
-#box-intersection .active-box div:nth-child(3) , #box-intersection .active-box div:nth-child(3) {
+#box-intersection .active-box div:nth-child(3),
+#box-intersection .active-box div:nth-child(3) {
   /* animation-delay: 450ms; */
   animation: box-fe 3s both 650ms;
 }
-#box-intersection .active-box div:nth-child(4) , #box-intersection .active-box div:nth-child(4) {
+#box-intersection .active-box div:nth-child(4),
+#box-intersection .active-box div:nth-child(4) {
   /* animation-delay: 150ms; */
   animation: box-fe 3s both 450ms;
 }
-#box-intersection .active-box div:nth-child(5) , #box-intersection .active-box div:nth-child(5) {
+#box-intersection .active-box div:nth-child(5),
+#box-intersection .active-box div:nth-child(5) {
   /* animation-delay: 10ms; */
   animation: box-fe 3s both 250ms;
 }
-
 
 /* #boxs-frontend .active {
   position: relative;
@@ -388,15 +397,14 @@ input:checked + .slider:before {
 
 /* /animate the box of what my skills */
 
-
 /* animate open element */
-.fade-in-inactive{
+.fade-in-inactive {
   opacity: 0;
 }
-.fade-right-inactive{
+.fade-right-inactive {
   opacity: 0;
 }
-.fade-left-inactive{
+.fade-left-inactive {
   opacity: 0;
 }
 
@@ -412,13 +420,12 @@ input:checked + .slider:before {
   animation: fade-left 2s both;
 }
 
-
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
 
-  100%{
+  100% {
     /* opacity: 1; */
     animation-play-state: paused;
   }
@@ -429,8 +436,8 @@ input:checked + .slider:before {
     left: -100px;
     opacity: 0;
   }
-  
-  100%{
+
+  100% {
     position: relative;
     left: 0px;
     /* opacity: 1; */
@@ -445,8 +452,8 @@ input:checked + .slider:before {
     opacity: 0;
     animation-play-state: paused;
   }
-  
-  100%{
+
+  100% {
     position: relative;
     right: 0px;
     /* opacity: 1; */
@@ -461,7 +468,8 @@ input:checked + .slider:before {
 
 /* animate hamburger menu */
 
-.balok1, .balok2 {
+.balok1,
+.balok2 {
   width: 30px;
 }
 .balok3 {
@@ -470,13 +478,14 @@ input:checked + .slider:before {
   transform: translateX(10px);
 }
 
-.balok1, .balok2, .balok3 {
+.balok1,
+.balok2,
+.balok3 {
   transition: 550ms ease;
   height: 4px;
   background-color: #ece8e1;
   border-radius: 10px;
 }
-
 
 .hamburger-menu input {
   position: relative;
@@ -501,6 +510,10 @@ input:checked + .slider:before {
   transform: rotate(45deg) translate(2px, 3px);
 }
 
+nav {
+  height: fit-content;
+}
+
 .menu-nav {
   position: relative;
   transform: translateY(-300px);
@@ -511,7 +524,5 @@ input:checked + .slider:before {
 .menu-nav-show {
   transform: translateY(0px);
 }
-
-
 
 /* /animate hamburger menu */
