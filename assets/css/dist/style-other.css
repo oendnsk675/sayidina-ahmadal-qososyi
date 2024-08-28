@@ -510,10 +510,6 @@ input:checked + .slider:before {
   transform: rotate(45deg) translate(2px, 3px);
 }
 
-nav {
-  height: fit-content;
-}
-
 .menu-nav {
   position: relative;
   transform: translateY(-300px);
